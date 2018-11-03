@@ -12,8 +12,20 @@ cd ${ROOT_DIR}/home/safe-env-dev
 APT_PACK_LIST_FILE=${ROOT_DIR}/home/safe-env-dev/build-aux/safe-env-dev.apt-pack-list
 APT_CACHE_TAR_FILE=${ROOT_DIR}/home/safe-env-dev/build-aux/cache.apt.archives.*.tar
 
-tar xvf ${APT_CACHE_TAR_FILE} -C / &&
-{ sed -e 's|#.*$||g' ${APT_PACK_LIST_FILE} | xargs apt-get install -y; } && 
+#>>>>>>>>>>
+#tar xvf ${APT_CACHE_TAR_FILE} -C / &&
+#i have test this, but when apt-get install os will download all packages again
+
+apt-get update &&
+apt-get install -y software-properties-common &&
+add-apt-repository -y ppa:bitcoin/bitcoin
+apt-get update &&
+
+{ 
+sed -e 's|#.*$||g' ${APT_PACK_LIST_FILE} | xargs apt-get install -y; 
+sed -e 's|#.*$||g' ${APT_PACK_LIST_FILE} | xargs apt-get install -y;
+sed -e 's|#.*$||g' ${APT_PACK_LIST_FILE} | xargs apt-get install -y;
+} && 
 apt -y autoremove && 
 apt-get clean
 
