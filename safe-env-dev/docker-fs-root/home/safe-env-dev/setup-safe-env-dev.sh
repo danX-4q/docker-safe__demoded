@@ -5,16 +5,14 @@ ROOT_DIR=/
 mkdir -p ${ROOT_DIR}/home/safe-env-dev &&
 cd ${ROOT_DIR}/home/safe-env-dev
 
-apt-get update &&
-apt-get install -y software-properties-common &&
-add-apt-repository -y ppa:bitcoin/bitcoin &&
-apt-get update
-
 #######################################
 #######################################
 #######################################
 
-APT_PACK_LIST_FILE=${ROOT_DIR}/home/safe-env-dev/safe-env-dev.apt-pack-list
+APT_PACK_LIST_FILE=${ROOT_DIR}/home/safe-env-dev/build-aux/safe-env-dev.apt-pack-list
+APT_CACHE_TAR_FILE=${ROOT_DIR}/home/safe-env-dev/build-aux/cache.apt.archives.*.tar
+
+tar xvf ${APT_CACHE_TAR_FILE} -C / &&
 { sed -e 's|#.*$||g' ${APT_PACK_LIST_FILE} | xargs apt-get install -y; } && 
 apt -y autoremove && 
 apt-get clean
@@ -23,7 +21,9 @@ apt-get clean
 #######################################
 #######################################
 
-tar xzvf depends.*.tar.gz &&
+DEPENDS_GZ_FILE=${ROOT_DIR}/home/safe-env-dev/build-aux/depends.*.tar.gz
+
+tar xzvf ${DEPENDS_GZ_FILE} &&
 
 rm -rf depends_bin/x86_64-linux && cp -rf depends depends_bin/x86_64-linux && 
 #( cd depends_bin/x86_64-linux && make -j4 ) &&

@@ -1,2 +1,4 @@
 
-docker-fs-root/home/safe-env-dev/depends.*.tar.gz
+docker-fs-root/home/safe-env-dev/build-aux/depends.*.tar.gz
+docker-fs-root/home/safe-env-dev/build-aux/cache.apt.archives.*.tar
+
