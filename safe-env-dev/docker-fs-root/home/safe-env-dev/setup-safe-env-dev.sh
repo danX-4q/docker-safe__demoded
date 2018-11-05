@@ -38,16 +38,16 @@ DEPENDS_GZ_FILE=${ROOT_DIR}/home/safe-env-dev/build-aux/depends.*.tar.gz
 tar xzvf ${DEPENDS_GZ_FILE} &&
 
 rm -rf depends_bin/x86_64-linux && cp -rf depends depends_bin/x86_64-linux && 
-#( cd depends_bin/x86_64-linux && make -j4 ) &&
+( cd depends_bin/x86_64-linux && make -j4 ) &&
 
 rm -rf depends_bin/x86_64-w64-mingw32 && cp -rf depends depends_bin/x86_64-w64-mingw32 &&
-#( cd depends_bin/x86_64-linux && make HOST=x86_64-w64-mingw32 -j4 ) &&
+( cd depends_bin/x86_64-w64-mingw32 && make HOST=x86_64-w64-mingw32 -j4 ) &&
 
 rm -rf depends_bin/i686-w64-mingw32 && cp -rf depends depends_bin/i686-w64-mingw32 &&
-#( cd depends_bin/x86_64-linux && make HOST=i686-w64-mingw32 -j4 ) &&
+( cd depends_bin/i686-w64-mingw32 && make HOST=i686-w64-mingw32 -j4 ) &&
 
 rm -rf depends_bin/x86_64-apple-darwin11 && cp -rf depends depends_bin/x86_64-apple-darwin11 &&
-#( cd depends_bin/x86_64-linux && make HOST=x86_64-apple-darwin11 -j4 ) 
+( cd depends_bin/x86_64-apple-darwin11 && make HOST=x86_64-apple-darwin11 -j4 ) 
 
 #######################################
 #######################################

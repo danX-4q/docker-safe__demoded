@@ -8,8 +8,8 @@ LABEL   author="danX <chenxd@bankledger.com>" \
 ADD ./docker-fs-root/ /
 WORKDIR /home/safe-env-dev/
 
-#RUN chmod +x setup-safe-env-dev.sh && \
-#    ./setup-safe-env-dev.sh
+RUN chmod +x setup-safe-env-dev.sh && \
+    ./setup-safe-env-dev.sh
 
 CMD ["tail", "-f", "/dev/null"]
 
