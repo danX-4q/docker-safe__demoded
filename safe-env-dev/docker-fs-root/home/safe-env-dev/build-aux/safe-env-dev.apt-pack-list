@@ -19,4 +19,4 @@ libqrencode-dev
 curl librsvg2-bin libtiff-tools bsdmainutils cmake imagemagick libcap-dev libz-dev libbz2-dev python-setuptools
 
 ####common utils
-vim tree
+vim tree tzdata locales x11-xserver-utils
