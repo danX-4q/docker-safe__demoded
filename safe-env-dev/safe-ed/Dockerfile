@@ -5,8 +5,8 @@ ADD ./docker-fs-root/ /
 WORKDIR /home/safe-ed/
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN chmod +x setup-safe-ed.sh && \
-    ./setup-safe-ed.sh
+RUN chmod +x setup-only-once.sh && \
+    ./setup-only-once.sh
 
 CMD ["tail", "-f", "/dev/null"]
 
