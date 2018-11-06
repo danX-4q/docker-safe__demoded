@@ -27,7 +27,11 @@ rm -rf depends_bin/i686-w64-mingw32 && cp -rf depends depends_bin/i686-w64-mingw
 ( cd depends_bin/i686-w64-mingw32 && make HOST=i686-w64-mingw32 -j4 ) &&
 
 rm -rf depends_bin/x86_64-apple-darwin11 && cp -rf depends depends_bin/x86_64-apple-darwin11 &&
-( cd depends_bin/x86_64-apple-darwin11 && make HOST=x86_64-apple-darwin11 -j4 ) 
+( cd depends_bin/x86_64-apple-darwin11 && make HOST=x86_64-apple-darwin11 -j4 ) ||
+
+{
+ echo "$0 said: run failed; abort now." ; exit 1; 
+}
 
 #######################################
 #######################################
