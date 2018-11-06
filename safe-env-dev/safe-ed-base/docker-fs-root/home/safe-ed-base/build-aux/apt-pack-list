@@ -15,8 +15,5 @@ libzmq3-dev
 libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 libqrencode-dev
 
-####from <<safe's static link method at linux>>
-curl librsvg2-bin libtiff-tools bsdmainutils cmake imagemagick libcap-dev libz-dev libbz2-dev python-setuptools
-
 ####common utils
 vim tree tzdata locales x11-xserver-utils
