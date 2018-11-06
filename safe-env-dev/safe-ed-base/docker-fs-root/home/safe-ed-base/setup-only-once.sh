@@ -3,6 +3,9 @@
 ROOT_DIR=/
 MAIN_DIR_NAME="safe-ed-base"
 
+find ${ROOT_DIR}/home/{bankledger,ex-work,safe-ed-base}/ | grep  -E '.gitkeep|.gitignore'
+
+
 mkdir -p ${ROOT_DIR}/home/${MAIN_DIR_NAME}/ &&
 cd ${ROOT_DIR}/home/${MAIN_DIR_NAME}/
 

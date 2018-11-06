@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  safe-ed:
+    build:
+      context: .
+    labels:
+      author: "danX <chenxd@bankledger.com>"
+      maintainer: "danX <chenxd@bankledger.com>"
+      version: "2.0.0"
+      description: "This is the develop environment for compiling, deploying and running program bankledger.com/safe:^2.x.y"
+    image: dockerhub.bankledger.com/safe-ed:2.0.0-snapshot
+    volumes:
+      - ./mount/bankledger:/home/bankledger
+      - ./mount/ex-work:/home/ex-work
+#sample only
+#    ports:
+#      - "8081:8081"

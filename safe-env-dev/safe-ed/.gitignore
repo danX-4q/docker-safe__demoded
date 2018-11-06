@@ -1,0 +1,5 @@
+
+docker-fs-root/home/safe-ed/build-aux/depends.*.tar.gz
+!mount/.gitkeep
+mount/*
+

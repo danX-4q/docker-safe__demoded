@@ -1,0 +1,4 @@
+
+docker-fs-root/home/safe-ed-base/build-aux/cache.apt.archives.*.tar
+!mount/.gitkeep
+mount/*
